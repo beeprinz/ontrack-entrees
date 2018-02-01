@@ -1,11 +1,11 @@
 const defaultState = {
     searchBarInput :'',
+    googleResults : null,
     noResult: false
 }
 
 export default function searchbarReducer(state = defaultState , action){
     const { type, payload } = action;
-    // console.log(payload)
 
     switch(type){
         case 'GET_SEARCH': {
@@ -19,15 +19,39 @@ export default function searchbarReducer(state = defaultState , action){
                     ...state,
                     searchBarInput:'none'
                 }
-            } ;
-        } case 'UPDATE_SEARCH': {
+            };
+        }
+        
+        case 'UPDATE_SEARCH': {
             if(payload) {
                 return {
                     ...state,
                     searchBarInput: payload
                 }
-            }break;
+            } else {
+                return {
+                    ...state,
+                    searchBarInput: ''
+                }
+            }
+        } 
+
+        case 'CLEAR_GOOGLE_RESULTS': {
+            return {
+                ...state,
+                googleResults : defaultState.googleResults
+            }
         }
+        
+        case 'UPDATE_GOOGLE_RESULTS_FULFILLED': {
+            if(payload) {
+                return {
+                    ...state,
+                    googleResults: payload
+                }
+            }
+        }
+
         default: {
             return state;
         }

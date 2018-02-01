@@ -24,6 +24,7 @@
     "prop-types": "^15.5.10",
     "react": "^15.6.2",
     "react-dom": "^15.6.2",
+    "react-geosuggest": "^2.7.0",
     "react-google-autocomplete": "^1.0.15",
     "react-places-autocomplete": "^6.0.2",
     "react-parallax": "^1.6.0",
