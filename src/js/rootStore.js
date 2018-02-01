@@ -3,8 +3,10 @@ import rootReducer from './rootReducer';
 import { combineReducers } from 'redux';
 import promiseMiddleware from 'redux-promise-middleware';
 
+function tempReducer () {
+  return null;
+};
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 const rootStore = createStore(rootReducer, composeEnhancers(applyMiddleware(promiseMiddleware())));
-
 
 export default rootStore;
