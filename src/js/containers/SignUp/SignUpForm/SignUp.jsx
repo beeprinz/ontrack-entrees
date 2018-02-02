@@ -6,8 +6,9 @@ export default class SignUp extends React.Component {
     constructor(props){
         super(props);
             this.State = {
-                isValid: 'false'
-        
+                isValid: 'false',
+                owner: false
+                
             }
         this.handleUserValidation = this.handleUserValidation.bind(this)
         this.handleChange = this.handleChange.bind(this);
@@ -37,7 +38,7 @@ handleChange(event) {
               "password": this.state.password,
               "password2": this.state.password2,
               "phoneNumber": this.state.phoneNumber,
-              "owner": this.state.isOwner,
+              "owner": this.state.owner,
               "address": this.state.address,
 
          }  
@@ -92,9 +93,9 @@ render (){
             </div>
             <div className="form-group text-center">
                 <label for="owner">Restaurant Owner?</label>
-                <select onChange = {this.handleChange} value=(owner) name="owner" className="form-control" id="owner">
-                <option >True</option>
-                <option >False</option>
+                <select onChange = {this.handleChange} value={owner} name="owner" className="form-control" id="owner">
+                <option value="true">True</option>
+                <option value="false">False</option>
                 </select>
             </div>
             <div  className="form-group text-center">
