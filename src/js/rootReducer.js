@@ -11,7 +11,7 @@ import signupformReducer from './containers/SignUp/SignUpForm/signupformReducer'
 
 
 const rootReducer = combineReducers({
-// add reducers
+signupReducer: signupReducer
 });
 
 export default rootReducer;
