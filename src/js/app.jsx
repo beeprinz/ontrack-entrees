@@ -5,7 +5,6 @@ import AccountSettings from './containers/AccountSettings/SignUp/SignUp';
 import Cart from './containers/Cart/OrderList/OrderList';
 import PaymentForm from './containers/Cart/PaymentForm/PaymentForm'
 import LandingPage from './containers/LandingPage/LandingPage/landingPage';
-import Login from './containers/LandingPage/Login/Login';
 import SearchBar from './containers/LandingPage/SearchBar';
 
 import OrderHistory from './containers/OrderHistory/HistoryList/HistoryList';
@@ -18,7 +17,6 @@ export default class App extends React.Component {
   render() {
     return (
       <Router>
-      <div>
         <Switch>
         <Route path='/search' component={SearchBar } />
         <Route exact path='/' component={ LandingPage } />
@@ -32,7 +30,6 @@ export default class App extends React.Component {
         <Route exact path='/notfound' component={ NotFound }/> 
 
         </Switch>
-      </div>
     </Router>
     );
   }

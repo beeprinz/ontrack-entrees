@@ -51,11 +51,11 @@ export default class landingPage extends React.Component {
                         <div className="dropdown-menu l " aria-labelledby="navbarDropdownMenuLink navbar-spacing">
                             <form className="mx-2 ">
                                 <div className="form-group text-center ">
-                                <label htmlfor="exampleInputEmail1">Email address</label>
+                                <label htmlFor="exampleInputEmail1">Email address</label>
                                 <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" />
                                 </div>
                                 <div className="form-group text-center">
-                                <label htmlfor="exampleInputPassword1">Password</label>
+                                <label htmlFor="exampleInputPassword1">Password</label>
                                 <input type="password" className="form-control" id="exampleInputPassword1" placeholder="Password" />
                                 </div>
                                 <div className="text-center">
