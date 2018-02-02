@@ -10,8 +10,10 @@ import restaurantlistReducer from './containers/RestaurantSearch/RestaurantList/
 
 
 const rootReducer = combineReducers({
-    signup: signUpReducer
+    signup: signUpReducer,
     //ADD REDUCERS HERE:
+// add reducers
+email:loginReducer
 });
     
 export default rootReducer;
