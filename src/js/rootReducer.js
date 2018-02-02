@@ -8,12 +8,13 @@ import searchbarReducer from './containers/LandingPage/SearchBar/searchbarReduce
 import menuitemReducer from './containers/RestaurantDetail/MenuItem/menuitemReducer';
 import restaurantlistReducer from './containers/RestaurantSearch/RestaurantList/restaurantlistReducer';
 
+// console.log(searchbarReducer,'rootreduc')
 
 const rootReducer = combineReducers({
-    signup: signUpReducer,
     //ADD REDUCERS HERE:
-// add reducers
-email:loginReducer
+    signup: signUpReducer,
+    searchbarReducer: searchbarReducer,
+    email:loginReducer
 });
     
 export default rootReducer;
