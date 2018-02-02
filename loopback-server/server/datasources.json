@@ -1,0 +1,22 @@
+{
+  "db": {
+    "host": "localhost",
+    "port": 27017,
+    "url": "",
+    "database": "mockData",
+    "password": "",
+    "name": "db",
+    "user": "",
+    "connector": "mongodb"
+  },
+  "MongoDB": {
+    "host": "ds221148.mlab.com",
+    "port": 21148,
+    "url": "mongodb://steven:origin@ds221148.mlab.com:21148/mockdata",
+    "database": "mockdata",
+    "password": "origin",
+    "name": "MongoDB",
+    "user": "steven",
+    "connector": "mongodb"
+  }
+}

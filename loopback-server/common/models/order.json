@@ -1,0 +1,41 @@
+{
+  "name": "order",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "order_id": {
+      "type": "string",
+      "required": true
+    },
+    "restaurant_id": {
+      "type": "string",
+      "required": true
+    },
+    "user_id": {
+      "type": "string",
+      "required": true
+    },
+    "date": {
+      "type": "date",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "menuItems": {
+      "type": "hasMany",
+      "model": "menu_item",
+      "foreignKey": ""
+    },
+    "restaurants": {
+      "type": "hasAndBelongsToMany",
+      "model": "restaurant",
+      "foreignKey": "orderId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

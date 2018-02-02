@@ -1,0 +1,58 @@
+{
+  "name": "restaurant",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "address": {
+      "type": "string",
+      "required": true
+    },
+    "category": {
+      "type": "string",
+      "required": true
+    },
+    "phone": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string",
+      "required": true
+    },
+    "owner_id": {
+      "type": "string",
+      "required": false
+    },
+    "restaurant_id": {
+      "type": "string",
+      "required": false
+    }
+  },
+  "validations": [],
+  "relations": {
+    "user": {
+      "type": "belongsTo",
+      "model": "user",
+      "foreignKey": ""
+    },
+    "orders": {
+      "type": "hasMany",
+      "model": "order",
+      "foreignKey": "restaurantId"
+    },
+    "menuItems": {
+      "type": "hasMany",
+      "model": "menu_item",
+      "foreignKey": "restaurantId"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
