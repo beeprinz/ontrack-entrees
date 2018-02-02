@@ -1,5 +1,6 @@
 const defaultState = {
     searchBarInput :'',
+    prediction:'',
     googleResults : null,
     noResult: false
 }
@@ -48,6 +49,16 @@ export default function searchbarReducer(state = defaultState , action){
                 return {
                     ...state,
                     googleResults: payload
+                }
+            }
+        }
+
+        case 'PREDICTION_SELECTION':{
+            if(payload){
+                return {
+                    ...state,
+                    searchBarInput:payload,
+                    googleResults:''
                 }
             }
         }

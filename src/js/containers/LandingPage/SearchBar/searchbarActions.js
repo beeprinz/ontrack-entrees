@@ -1,6 +1,9 @@
 import axios from 'axios'
 var service = null;
 
+export function debounce(a,b,c){var d,e;return function(){function h(){d=null,c||(e=a.apply(f,g))}var f=this,g=arguments;return clearTimeout(d),d=setTimeout(h,b),c&&!d&&(e=a.apply(f,g)),e}}
+
+
 export function getSearch(place){
     // console.log(place,'action')
     return {
@@ -26,10 +29,18 @@ export function getGoogleSearch(search) {
         }
     }
 
-
     return {
         type: 'UPDATE_GOOGLE_RESULTS',
         payload: new Promise((res, rej) => service.getPlacePredictions({ input: search,  types: ['address'] }, data => res(data)))
+    }
+}
+
+
+export function selectPrediction(prediction){
+    // console.log('Prediction');
+    return {
+        type: 'PREDICTION_SELECTION',
+        payload: prediction
     }
 }
 
@@ -89,4 +100,3 @@ export function getGoogleSearch(search) {
     // };
 // }
 
-export function debounce(a,b,c){var d,e;return function(){function h(){d=null,c||(e=a.apply(f,g))}var f=this,g=arguments;return clearTimeout(d),d=setTimeout(h,b),c&&!d&&(e=a.apply(f,g)),e}}

@@ -1,18 +1,20 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import  { updateSearch, getSearch, fetchRestaurants, getGoogleSearch, debounce } from './searchbarActions'
+import  { updateSearch, getSearch, fetchRestaurants, getGoogleSearch, selectPrediction, debounce } from './searchbarActions'
 //import PlacesAutocomplete, { geocodeByAddress, geocodeByPlaceId } from 'react-places-autocomplete'; 
 
 export default class SearchBar extends React.Component{
     constructor(props){
         super(props);
         
-        this.handleSearch = this.handleSearch.bind(this);
+        this.handleSearchClick = this.handleSearchClick.bind(this);
         this.handleSearchInput = this.handleSearchInput.bind(this);
-        this.handleAPI = debounce(this.getGoogleResults.bind(this), 1000);
+        this.handleOnPredictClick = this.handleOnPredictClick.bind(this);
+        this.handleAPI = debounce(this.getGoogleResults.bind(this), 10);
     }
 
-    handleSearch(event){
+    handleSearchClick(event){
+        console.log(event.target.value)
         const {dispatch} = this.props
         const value = event.target.value;
         dispatch(getSearch(value))
@@ -31,6 +33,12 @@ export default class SearchBar extends React.Component{
         dispatch(updateSearch(value));
     }
 
+    handleOnPredictClick(event){
+        const {dispatch} = this.props
+        const value = event.target.value
+        dispatch(selectPrediction(value));
+    }
+
     render() {
         const store = this.props
         console.log('store', store)
@@ -43,28 +51,24 @@ export default class SearchBar extends React.Component{
                 </div>
                 <div className="input-group input-group-lg">
                     <div className="input-group-prepend">
-                        <button value="test" onClick={this.handleSearch} className="btn btn-outline-secondary" type="button">Search</button>
+                        <button value={store.search} onClick={this.handleSearchClick} className="btn btn-outline-secondary" type="button">Search</button>
                     </div>
-                    <input value={store.search} onChange={this.handleSearchInput} type="text" className="form-control" placeholder="Restaurants" aria-label="Large" aria-describedby="basic-addon1" />
+                    <input value={store.search} onChange={this.handleSearchInput} type="text" className="form-control" placeholder="City" aria-label="Large" aria-describedby="basic-addon1" />
                 </div>
-                <div className="input-group mb-3">
-                    <div className="input-group-prepend">
-                        <button className="btn btn-outline-secondary" type="button">Button</button>
-                    </div>
-                    <ul>
+                <div>
+
+                <div className="">
                     { !!store.googleResults &&
                         store.googleResults.map((item) =>{
-                            return(<li key={item.place_id}>{item.description}</li>)
+                            return(
+                            <div className="alert alert-light alert-dismissible fade show offset-lg-1" key={item.place_id} role="alert">
+                                <strong><option onClick={this.handleOnPredictClick}>{item.description}</option></strong>
+                            </div>)
                         })
                     }
-                    </ul>
-                    {/* <select className="custom-select" id="inputGroupSelect03">
-                        <option >Choose...</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                    </select> */}
+                    </div>
                 </div>
+
             </div>
         )
     }
