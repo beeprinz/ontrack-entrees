@@ -12,6 +12,7 @@ import signupformReducer from './containers/SignUp/SignUpForm/signupformReducer'
 
 const rootReducer = combineReducers({
 // add reducers
+email:loginReducer
 });
 
 export default rootReducer;
