@@ -106,7 +106,7 @@ export default class landingPage extends React.Component {
     <h2 style={{marginLeft:40+"px"}}>About Us <i className="fa fa-id-card" aria-hidden="true"></i></h2>
     <hr />
     <div className="card">
-        <div className="about-text card-block">
+        <div className="about-text card-block p-2">
             OnTrack Entrees is transforming the way goods move around cities by enabling anyone to have anything delivered on-demand. Our revolutionary Urban Logistics platform connects customers with local couriers who can deliver anything from any store or restaurant in minutes. We empower communities to shop local with no waiting,
             and empower businesses through our API to offer delivery.
         </div>

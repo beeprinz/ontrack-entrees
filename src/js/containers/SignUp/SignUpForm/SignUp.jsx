@@ -1,6 +1,6 @@
 import React from 'react';
-import {link, Redirect} from 'react-router-dom'
-import { getUser } from './signupActions'
+import { Redirect, Link } from 'react-router-dom'
+import { getUser, saveUser } from './signupActions'
 
 export default class SignUp extends React.Component {
     constructor(props){
@@ -42,10 +42,13 @@ handleChange(event) {
               "address": this.state.address,
 
          }  
-         if(userInfo.password === userInfo.password2){
+         console.log(this.state.owner)
+         if(userInfo.password === userInfo.password2 && userInfo.owner != undefined){
             dispatch(getUser(userInfo));  
+            dispatch(saveUser(userInfo))
             this.setState({
                 isValid: true
+                
             })   
          }
    
@@ -53,18 +56,20 @@ handleChange(event) {
 
      }
         
-       
+    
 
 render (){
-    const { isValid } = this.props
+    const { userSaved } = this.props
+    console.log(userSaved + "Signup props")
     const { owner } = this.props
     return (
-        
+       
         <div className = "SignUpForm "> 
         {/* <div className="signupgradient"> */}
         <header ><h1 className= "text-center p-3 graduate about-text" >OnTrack Entrees Sign Up form</h1></header>
         <div class="card">
         <div class="card-block text-center">
+       
         <form onSubmit = {this.handleUserValidation} className="container text-center">
             <div className="form-group text-center">
             <label for="firstName" >First Name</label>
@@ -94,6 +99,7 @@ render (){
             <div className="form-group text-center">
                 <label for="owner">Restaurant Owner?</label>
                 <select onChange = {this.handleChange} value={owner} name="owner" className="form-control" id="owner">
+                <option> Select One </option>
                 <option value="true">True</option>
                 <option value="false">False</option>
                 </select>
@@ -154,7 +160,8 @@ render (){
             </div>
             </div>
             <button type="submit"  className="btn btn-primary text-center m-3">Submit</button>
-            {/* {isValid ?  <Redirect to="/"/> : <h1>Field INCORRECT</h1>}  */}
+{/*             
+            {isValid ?   <Red: <h1>Field INCORRECT</h1>}    */}
             </form>
         </div>
         </div>   

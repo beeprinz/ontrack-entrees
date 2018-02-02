@@ -8,6 +8,7 @@ const initialState = {
       phoneNumber: '',
       owner: '',
       address:'',
+      userSaved: false
 };
 
 export default function signUpReducer(state = initialState, action) {
@@ -25,6 +26,12 @@ export default function signUpReducer(state = initialState, action) {
                    owner: payload.owner,
                    address: payload.address,
             };
+        }
+        case types.POST_USER_INFO: {
+            return {
+                ...state,
+                userSaved:true
+            }
         }
         default: {
             return state;

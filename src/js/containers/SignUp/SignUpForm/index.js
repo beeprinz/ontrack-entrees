@@ -11,6 +11,7 @@ function mapStoreToProps(store){
           phoneNumber: store.phoneNumber,
           owner: store.owner,
           address: store.address,
+          userSaved: store.userSaved
     };
 }
 
