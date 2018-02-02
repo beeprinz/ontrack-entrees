@@ -1,41 +1,71 @@
 import React from 'react'
 
+import { 
+    getLogInput
+} from './landingpageActions'
+
 export default class landingPage extends React.Component {
     constructor(props) {
         super(props);
+      
        
-        this.handleLogInInput = this.handleLogInInput.bind(this);
-        this.handleSignUpButton = this.handleSignUpButton.bind(this);
-        this.handleSearchUpButton = this.handleSearchUpButton.bind(this)
-        this.handleDefault = this.handleDefault.bind(this);
+        this.handleLogInput = this.handleLogInput.bind(this);
+        this.handleChange = this.handleChange.bind(this);
+        // this.handleLogClick = this.handleLogClick.bind(this);
     }
 
+// Romers Login handleEvent functions (start)
 
-    handleLogInInput(event){
+    handleLogInput(e){
+        console.log(value,'it should render')
         const { dispatch } = this.props;
-        const { value } = event.target;
-
-        dispatch(get(value));
+        const { value } = target.value;
+        const userInput = {
+            "email": this.state.email,
+            "password": this.state.password
+        }
+       e.preventDefault()
+        dispatch(getLogInput(userInput)); 
+        
     }
+    handleChange(e){
+        const target= event.target;
+        const value = target.value;
+        const name = target.name;
 
-    handleSignUpButton(event){
-        const { dispatch } = this.props;
-        const { value } = event.target;
+        this.setState({
+            [name]: value
+        })
+    }
+    // handleLogClick(){
+    //     const {dispatch,userInput} = this.props;
+    //     dispatch(getLogInput(userInput));
+    // }
+
+
+
+    // (end)
+
+    // handleSignUpButton(event){
+    //     const { dispatch } = this.props;
+    //     const { value } = event.target;
             
-    }
-    handleSearchUpButton(event){
-        const { dispatch } = this.props;
-        const { value } = event.target 
-    }
-    handleDefault(event){
+    // }
+    // handleSearchUpButton(event){
+    //     const { dispatch } = this.props;
+    //     const { value } = event.target 
+    // }
+    // handleDefault(event){
 
-        const { dispatch } = this.props;
+    //     const { dispatch } = this.props;
 
-        const { value } = event.target;
+    //     const { value } = event.target;
 
       
-    }
+    // }
+    
     render() {
+        
         return (
     <div className="andrew-body">
         <div className="landingPage">
@@ -54,17 +84,17 @@ export default class landingPage extends React.Component {
                         Login or Signup
                         </a>
                         <div className="dropdown-menu l " aria-labelledby="navbarDropdownMenuLink navbar-spacing">
-                            <form className="mx-2 ">
+                            <form onSubmit = {this.handleLogInput}className="mx-2 ">
                                 <div className="form-group text-center ">
                                 <label htmlFor="exampleInputEmail1">Email address</label>
-                                <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" />
+                                <input name="email" type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" onChange={this.handleChange}/>
                                 </div>
                                 <div className="form-group text-center">
                                 <label htmlFor="exampleInputPassword1">Password</label>
-                                <input type="password" className="form-control" id="exampleInputPassword1" placeholder="Password" />
+                                <input name="password" type="password" className="form-control" id="exampleInputPassword1" placeholder="Password"  onChange={this.handleChange}/>
                                 </div>
                                 <div className="text-center">
-                                <button type="submit" className="btn btn-primary text-center">Log In</button>
+                                <button type="submit" className="btn btn-primary text-center" >Log In</button>
                             </div>
                         </form>
                     <hr />
