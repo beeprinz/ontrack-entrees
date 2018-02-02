@@ -11,9 +11,8 @@ import OrderHistory from './containers/OrderHistory/HistoryList/HistoryList';
 import RestaurantDetail from './containers/RestaurantDetail/MenuItem/MenuItem';
 import RestaurantList from './containers/RestaurantSearch/RestaurantList/RestaurantList';
 import SignUp from './containers/SignUp/SignUpForm';
-import Error from './components/NotFound/NotFound';
+import NotFound from './components/NotFound/NotFound';
 import ThankYou from './components/ThankYou/ThankYou';
-
 export default class App extends React.Component {
   render() {
     return (
@@ -28,6 +27,8 @@ export default class App extends React.Component {
         <Route path='/user/:id/cart' component={ Cart } />
         <Route path='/restaurant/:id' component={ RestaurantList } />
         <Route path='/thankyou' component={ ThankYou } />
+        <Route exact path='/notfound' component={ NotFound }/> 
+
         </Switch>
       </div>
     </Router>
@@ -49,3 +50,11 @@ export default class App extends React.Component {
     );
   }
 }
+//<Route path='/NotFound'  />
+// <Route path='/signup' component={ SignUp } />
+// <Route path='/nearby' component={ RestaurantList } />
+// <Route path='/user/:id' component={ AccountSettings } />
+// <Route path='/user/:id/orders' component={ OrderHistory } />
+// <Route path='/user/:id/cart' component={ Cart } />
+// <Route path='/restaurant/:id' component={ RestaurantList } />
+// <Route path='/thankyou' component={ ThankYou } />
