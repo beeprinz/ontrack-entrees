@@ -7,7 +7,7 @@ import loginReducer from './containers/LandingPage/Login/loginReducer';
 import searchbarReducer from './containers/LandingPage/SearchBar/searchbarReducers';
 import menuitemReducer from './containers/RestaurantDetail/MenuItem/menuitemReducer';
 import restaurantlistReducer from './containers/RestaurantSearch/RestaurantList/restaurantlistReducer';
-import signupformReducer from './containers/SignUp/SignUpForm/signupformReducer';
+
 
 const rootReducer = combineReducers({
     signup: signUpReducer

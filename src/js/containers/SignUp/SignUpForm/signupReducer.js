@@ -3,7 +3,7 @@ import { types } from './signupActions';
 const initialState = {
       firstName: '',
       lastName: '',
-      emailAddress: '',
+      email: '',
       password: '',
       phoneNumber: '',
       owner: '',
@@ -19,7 +19,7 @@ export default function signUpReducer(state = initialState, action) {
                 ...state,
                    firstName: payload.firstName,
                    lastName: payload.lastName,
-                   emailAddress: payload.emailAddress,
+                   email: payload.email,
                    password: payload.password,
                    phoneNumber: payload.phoneNumber,
                    owner: payload.owner,

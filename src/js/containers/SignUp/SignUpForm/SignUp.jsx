@@ -1,13 +1,13 @@
 import React from 'react';
-import {link} from 'react-router-dom'
+import {link, Redirect} from 'react-router-dom'
 import { getUser } from './signupActions'
 
 export default class SignUp extends React.Component {
     constructor(props){
         super(props);
             this.State = {
-                isValid: 'false',
-                // isOwner: 'true'
+                isValid: 'false'
+        
             }
         this.handleUserValidation = this.handleUserValidation.bind(this)
         this.handleChange = this.handleChange.bind(this);
@@ -41,7 +41,13 @@ handleChange(event) {
               "address": this.state.address,
 
          }  
-         dispatch(getUser(userInfo));      
+         if(userInfo.password === userInfo.password2){
+            dispatch(getUser(userInfo));  
+            this.setState({
+                isValid: true
+            })   
+         }
+   
          
 
      }
@@ -49,7 +55,8 @@ handleChange(event) {
        
 
 render (){
-    const passwordValidation = false;
+    const { isValid } = this.props
+    const { owner } = this.props
     return (
         
         <div className = "SignUpForm "> 
@@ -85,7 +92,7 @@ render (){
             </div>
             <div className="form-group text-center">
                 <label for="owner">Restaurant Owner?</label>
-                <select onChange = {this.handleChange}  name="owner" className="form-control" id="owner">
+                <select onChange = {this.handleChange} value=(owner) name="owner" className="form-control" id="owner">
                 <option >True</option>
                 <option >False</option>
                 </select>
@@ -96,7 +103,7 @@ render (){
                 <h6 className="p-2">By Submiting you are agreeing to our<button type="button" className="btn btn-link p-2" data-toggle="modal" data-target="#exampleModalLong">terms and service.</button></h6>
             </div>
             
-            <div className="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+            <div className="modal fade" id="exampleModalLong" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
             <div className="modal-dialog" role="document">
                 <div className="modal-content">
                 <div className="modal-header">
@@ -146,6 +153,7 @@ render (){
             </div>
             </div>
             <button type="submit"  className="btn btn-primary text-center m-3">Submit</button>
+            {/* {isValid ?  <Redirect to="/"/> : <h1>Field INCORRECT</h1>}  */}
             </form>
         </div>
         </div>   

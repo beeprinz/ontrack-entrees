@@ -6,7 +6,7 @@ function mapStoreToProps(store){
     return{
           firstName: store.firstName,
           lastName: store.lastName,
-          emailAddress: store.emailAddress,
+          email: store.email,
           password: store.password,
           phoneNumber: store.phoneNumber,
           owner: store.owner,

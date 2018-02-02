@@ -22,7 +22,7 @@ export default class App extends React.Component {
         <Switch>
         <Route exact path='/' component={ LandingPage } />
         <Route  path='/signup' component={ SignUp } />
-        <Route path='/nearby' component={ RestaurantList } />
+        <Route path='/nearby/' component={ RestaurantList } />
         <Route path='/user/:id' component={ AccountSettings } />
         <Route path='/user/:id/orders' component={ OrderHistory } />
         <Route path='/user/:id/cart' component={ Cart } />
