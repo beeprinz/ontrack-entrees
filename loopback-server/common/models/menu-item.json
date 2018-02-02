@@ -1,0 +1,32 @@
+{
+  "name": "menu_item",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "restaurant_id": {
+      "type": "string",
+      "required": true
+    },
+    "price": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "restaurant": {
+      "type": "belongsTo",
+      "model": "restaurant",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
