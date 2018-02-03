@@ -1,35 +1,35 @@
 import React from 'react';
 import { Redirect, Link } from 'react-router-dom'
-import { getUser, saveUser } from './signupActions'
+import { getUser, saveUser, checkValidation } from './signupActions'
+import axios from 'axios'
 
 export default class SignUp extends React.Component {
     constructor(props){
         super(props);
-            this.State = {
-                isValid: 'false',
-                owner: false
-                
+        this.State = {
+            isValid: true,
+            owner: false,   
+            communicationError: false
             }
         this.handleUserValidation = this.handleUserValidation.bind(this)
-        this.handleChange = this.handleChange.bind(this);
-        
+        this.handleChange = this.handleChange.bind(this);    
     }
+
 handleChange(event) {
      const target = event.target;
      const value = target.value;
      const name = target.name;
+     
      this.setState({
          [name]: value
-     }, function(){
-         console.log(this.state)
+        }, function(){
      });
-
  }
 
  handleUserValidation(e){
   e.preventDefault() 
      const { dispatch } = this.props;
- 
+     const { postResults } = this.props;
 
         const userInfo = {
               "firstName":this.state.firstName,
@@ -40,64 +40,82 @@ handleChange(event) {
               "phoneNumber": this.state.phoneNumber,
               "owner": this.state.owner,
               "address": this.state.address,
-
+              "postResults": postResults
          }  
-         console.log(this.state.owner)
-         if(userInfo.password === userInfo.password2 && userInfo.owner != undefined){
-            dispatch(getUser(userInfo));  
-            dispatch(saveUser(userInfo))
-            this.setState({
-                isValid: true
-                
-            })   
+
+    // Axios call to DB and store for new User
+  
+    
+    if(userInfo.password === userInfo.password2 && userInfo.owner != undefined){   
+            axios.post('http://localhost:3000/api/users',{
+               first_name: userInfo.firstName,
+               last_name: userInfo.lastName,
+               email: userInfo.email,
+               home_address: userInfo.address,
+               password: userInfo.password,
+               phone_number: userInfo.phoneNumber,
+               owner: userInfo.owner,
+               emailVerified: true,
+             })
+             .then(function (response) {
+               dispatch(saveUser(response))           
+             })
+             .catch(function (error) {
+                this.setState({
+                    communicationError: true
+                })
+                dispatch(saveUserFailed(error))
+             })
+               dispatch(getUser(userInfo)); 
+            
+         }else{
+            dispatch(checkValidation(userInfo))
          }
-   
-         
 
      }
         
-    
-
 render (){
-    const { userSaved } = this.props
-    console.log(userSaved + "Signup props")
-    const { owner } = this.props
+    const { communicationError } = this.props
+    const { userSaved } = this.props;
+    const { owner } = this.props;
+    const { isValid } = this.props;
+    console.log(this.props)
     return (
-       
-        <div className = "SignUpForm "> 
-        {/* <div className="signupgradient"> */}
+    <div className = "SignUpForm "> 
         <header ><h1 className= "text-center p-3 graduate about-text" >OnTrack Entrees Sign Up form</h1></header>
         <div class="card">
         <div class="card-block text-center">
-       
         <form onSubmit = {this.handleUserValidation} className="container text-center">
+         {isValid ? '': <div className="alert alert-danger" role="alert">
+          <strong>Oh snap!</strong> Password is not matching or Please choose one option for owner inquiry.
+          </div> }
             <div className="form-group text-center">
-            <label for="firstName" >First Name</label>
+            <label htmlFor="firstName" >First Name</label>
                 <input onChange = {this.handleChange} name="firstName" className="form-control" type="text" id="firstName" />
             </div>
             <div className="form-group text-center">
-            <label for="lastName" >Last Name</label>
+            <label htmlFor="lastName" >Last Name</label>
                 <input onChange = {this.handleChange} name="lastName" className="form-control" type="text"  id="lastName" />
             </div>
             <div className="form-group text-center">
-                <label for="email">Email address</label>
+                <label htmlFor="email">Email address</label>
                 <input onChange = {this.handleChange} name="email"  type="email" className="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email"/>
                 <small id="emailHelp" Name="form-text text-muted">We'll never share your email with anyone else.</small>
             </div>
             <div className="form-group text-center" >
-                <label for="password">Password</label>
+                <label htmlFor="password">Password</label>
                 <input onChange = {this.handleChange} name="password"  type="password" className="form-control" id="password" placeholder="Password" />
             </div>
             <div className="form-group text-center">
-                <label for="password2">Please Confirm Password</label>
+                <label htmlFor="password2">Please Confirm Password</label>
                 <input onChange = {this.handleChange} name="password2" type="password" className="form-control" id="password2" placeholder="Confirm Password" />
             </div> 
             <div className="form-group text-center">
-            <label for="phoneNumber" className="col-2 col-form-label">Phone Number</label>
+            <label htmlFor="phoneNumber" className="col-2 col-form-label">Phone Number</label>
                 <input  onChange = {this.handleChange} name="phoneNumber"  className="form-control" type="tel" id="phoneNumber" />
             </div>
             <div className="form-group text-center">
-                <label for="owner">Restaurant Owner?</label>
+                <label htmlFor="owner">Restaurant Owner?</label>
                 <select onChange = {this.handleChange} value={owner} name="owner" className="form-control" id="owner">
                 <option> Select One </option>
                 <option value="true">True</option>
@@ -105,7 +123,7 @@ render (){
                 </select>
             </div>
             <div  className="form-group text-center">
-                <label for="address">Address</label>
+                <label htmlFor="address">Address</label>
                 <textarea onChange = {this.handleChange} name="address" className="form-control" id="address" rows="2"></textarea>
                 <h6 className="p-2">By Submiting you are agreeing to our<button type="button" className="btn btn-link p-2" data-toggle="modal" data-target="#exampleModalLong">terms and service.</button></h6>
             </div>
@@ -160,12 +178,11 @@ render (){
             </div>
             </div>
             <button type="submit"  className="btn btn-primary text-center m-3">Submit</button>
-{/*             
-            {isValid ?   <Red: <h1>Field INCORRECT</h1>}    */}
+              {userSaved ?   <Redirect to="/resturantDetail"/> :''}      
             </form>
         </div>
-        </div>   
-        </div>
+    </div>   
+</div>
         
     )
 }/*End of of Render Component */
