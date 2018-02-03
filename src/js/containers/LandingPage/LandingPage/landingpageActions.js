@@ -2,8 +2,16 @@ import axios from 'axios';
 
 export const getLogInput = (userInput) => { 
     return {
-      type: 'GET_LOG_INPUT',
-      payload: userInput
+      type: 'GET_EMAIL_INPUT',
+      userInput:payload
+    }
+  }
+
+  export const getPasswordInput = (userInput) => {  
+      console.log(payload,'dfsfdfsdf')
+    return {
+      type: 'GET_PASSWORD_INPUT',
+      userInput:payload 
     }
   }
   

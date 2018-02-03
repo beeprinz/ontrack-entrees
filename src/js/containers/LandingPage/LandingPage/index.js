@@ -11,7 +11,6 @@ function mapStoreToProps(store) {
     email: store.email.email,
     password: store.email.password
 };
-}
 
 // This might look odd but, connect returns a function,
 // that is then called with the component itself.

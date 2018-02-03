@@ -9,7 +9,7 @@ export default function landingpageReducer(state = initialState, action) {
     // console.log(type, payload)
 
     switch (type) {
-        case 'GET_LOG_INPUT':
+        case 'GET_EMAIL_INPUT':
           return {
             ...state,
             email: payload,
