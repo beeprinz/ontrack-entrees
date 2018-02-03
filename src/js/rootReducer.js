@@ -15,7 +15,7 @@ const rootReducer = combineReducers({
     signup: signUpReducer,
     nearbylist:restaurantlistReducer,
     searchbarReducer: searchbarReducer,
-    email:loginReducer,
+    email:landingpageReducer,
     login: loginReducerPage
 });
     

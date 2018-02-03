@@ -5,11 +5,11 @@ import landingPage from './landingPage'
 // This function takes the store and returns an object
 // that's passed to the props of the component.
 function mapStoreToProps(store) {
-    console.log(store)
+    // console.log(store.email.email)
   return {
   
-    email: store.email,
-    password:store.password
+    email: store.email.email,
+    password: store.email.password
 };
 }
 
