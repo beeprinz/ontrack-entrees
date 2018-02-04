@@ -8,7 +8,7 @@ const defaultState = {
 
 export default function searchbarReducer(state = defaultState , action){
     const { type, payload } = action;
-    console.log(payload)
+    // console.log(payload)
 
     switch(type){
         case 'GET_SEARCH': {

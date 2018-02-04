@@ -18,10 +18,10 @@ export default class App extends React.Component {
     return (
       <Router>
         <Switch>
-        {/* <Route path='/search' component={ SearchBar } /> */}
+        <Route path='/search' component={ SearchBar } />
         {/* <Route exact path='/' component={ LandingPage } />
         <Route path='/signup' component={ SignUp } /> */}
-        <Route path='/nearby' component={ RestaurantList } />
+        <Route path='/nearby/:listings' component={ RestaurantList } />
         {/* <Route path='/user/:id' component={ AccountSettings } />
         <Route path='/user/:id/orders' component={ OrderHistory } />
         <Route path='/user/:id/cart' component={ Cart } />

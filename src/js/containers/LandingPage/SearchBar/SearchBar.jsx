@@ -52,7 +52,7 @@ export default class SearchBar extends React.Component{
                 <div className="input-group input-group-lg">
                     <div className="input-group-prepend">
                         
-                        <a value={store.search} onClick={this.handleSearchClick} className="btn btn-outline-secondary" type="button">Search</a>
+                        <Link value={store.search} onClick={this.handleSearchClick} className="btn btn-outline-secondary" type="button" to={`/nearby/${store.search}`}>Search</Link>
                     </div>
                     <input value={store.search} onChange={this.handleSearchInput} type="text" className="form-control" placeholder="City" aria-label="Large" aria-describedby="basic-addon1" />
                 </div>
