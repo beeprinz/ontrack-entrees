@@ -13,7 +13,7 @@ import restaurantlistReducer from './containers/RestaurantSearch/RestaurantList/
 const rootReducer = combineReducers({
     //ADD REDUCERS HERE:
     signup: signUpReducer,
-    searchbarReducer: searchbarReducer,
+    searchbar: searchbarReducer,
     email:loginReducer
 });
     
