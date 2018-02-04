@@ -19,15 +19,15 @@ export default class App extends React.Component {
       <Router>
         <Switch>
         <Route path='/search' component={ SearchBar } />
-        {/* <Route exact path='/' component={ LandingPage } />
-        <Route path='/signup' component={ SignUp } /> */}
+        <Route exact path='/' component={ LandingPage } />
+        <Route path='/signup' component={ SignUp } />
         <Route path='/nearby/:listings' component={ RestaurantList } />
-        {/* <Route path='/user/:id' component={ AccountSettings } />
+        <Route path='/user/:id' component={ AccountSettings } />
         <Route path='/user/:id/orders' component={ OrderHistory } />
         <Route path='/user/:id/cart' component={ Cart } />
         <Route path='/restaurant/:id' component={ RestaurantList } />
         <Route path='/thankyou' component={ ThankYou } />
-        <Route exact path='/notfound' component={ NotFound }/>  */}
+        <Route exact path='/notfound' component={ NotFound }/> 
 
         </Switch>
     </Router>
