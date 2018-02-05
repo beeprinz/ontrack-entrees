@@ -1,6 +1,6 @@
 import React from 'react';
 import { Redirect, Link } from 'react-router-dom'
-import { logUserIn, userError } from './loginActions'
+import { LogUserIn, userError } from './loginActions'
 import axios from 'axios'
 
 export default class LogIn extends React.Component {
@@ -24,13 +24,14 @@ export default class LogIn extends React.Component {
         }
         console.log(userLoginInfo)
         if (userLoginInfo.email =! ''){
+            dispatch(LogUserIn(userLoginInfo))
             axios.post('http://localhost:3000/api/users/login',{
                 "email": userLoginInfo.email,
                 "password": userLoginInfo.password
             }).then(function (response) {
                 this.setState({email:'',password:''})
-                console.log (" THIS IS RESPONSE DATA  + " + response.Data)
-                dispatch(logUserIn(response.Data))          
+                console.log (" THIS IS RESPONSE DATA  + " + response)
+                dispatch(logUserIn(response))          
               })
               .catch(function (error) {
                 dispatch(userError(userLoginInfo))
@@ -57,20 +58,20 @@ render (){
         <div className= "login">
             <div className="container">
             <form onSubmit= {this.handleUserInput} >
-                <div className="form-group row">
-                <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
-                <div className="col-sm-10">
+                <div className="form-group text-center ">
+                <label htmlfor="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+                <div className="container">
                     <input type="email" onChange={this.handleOnChange} name ="email" className="form-control" id="inputEmail3" placeholder="Email" />
                 </div>
                 </div>
-                <div className="form-group row">
-                <label for="inputPassword3" className="col-sm-2 col-form-label">Password</label>
-                <div class="col-sm-10">
+                <div className="form-group text-center ">
+                <label htmlfor="inputPassword3" className="col-sm-2 col-form-label">Password</label>
+                <div class="container">
                     <input type="password"  onChange={this.handleOnChange} name="password" className="form-control" id="inputPassword3" placeholder="Password" />
                 </div>
                 </div>
-                <div className="form-group row">
-                <div className="offset-sm-2 col-sm-10">
+                <div className="form-group">
+                <div className="container text-center">
                     <button type="submit" className="btn btn-primary">Sign in</button>
                 </div>
                 </div>
