@@ -1,5 +1,5 @@
 const defaultState = {
-    test:null
+    test:'test'
 }
 
 export default function test(state = defaultState , action){
