@@ -8,8 +8,11 @@ function mapStoreToProps(store) {
     // console.log(store.email.email)
   return {
   
-    email: store.email.email,
-    password: store.email.password
+    email: store.login.email,
+    password: store.login.password,
+    userToken: store.login.userToken,
+    userId: store.login.userId
+}
 };
 
 // This might look odd but, connect returns a function,

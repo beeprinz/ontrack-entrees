@@ -1,6 +1,9 @@
 const initialState = {
   email: '',
-  password:''
+  password:'',
+  userToken:'',
+  userId:''
+
 }
 
 export default function landingpageReducer(state = initialState, action) {
@@ -9,17 +12,19 @@ export default function landingpageReducer(state = initialState, action) {
     // console.log(type, payload)
 
     switch (type) {
-        case 'GET_EMAIL_INPUT':
-          return {
-            ...state,
-            email: payload,
-            password: payload
-          }
-          case 'UPDATE_LOG_INPUT':
-          return {
-            ...state,
-            ...payload
-          }
+        case 'LOGIN_FULFILLED':
+            // console.log(payload.data.id,'SAUCY');
+            return {
+                ...state,
+                userToken : payload.data.id,
+                userId: payload.data.userId
+              
+            }
+          case 'LOG_INPUT':
+            return {
+                ...state,
+                ...payload
+            }
           default: {
             return state;
           }

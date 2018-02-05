@@ -1,24 +1,33 @@
 import axios from 'axios';
 
-export const getLogInput = (userInput) => { 
+export const getLogInput = (email, password) => { 
+   
+
+    var loginData = {
+        email: email,
+        password: password
+    }
+
     return {
-      type: 'GET_EMAIL_INPUT',
-      userInput:payload
+        
+      type: 'LOGIN',
+      payload: axios.post('http://localhost:5000/api/users/login', loginData)
+                .then(response => {
+                    //we'll want to return token
+                    // response.data.id
+                   return response; 
+                }).catch(error => {
+                    alert(error)
+                })
+                
     }
   }
 
-  export const getPasswordInput = (userInput) => {  
-      console.log(payload,'dfsfdfsdf')
-    return {
-      type: 'GET_PASSWORD_INPUT',
-      userInput:payload 
-    }
-  }
+
   
   export const updateLogInput = (update) => { 
-    // console.log(update)
     return {
-      type: 'UPDATE_LOG_INPUT',
+      type: 'LOG_INPUT',
       payload: update
     }
   }

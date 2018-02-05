@@ -16,7 +16,8 @@ const rootReducer = combineReducers({
     nearbylist:restaurantlistReducer,
     searchbarReducer: searchbarReducer,
     email:landingpageReducer,
-    login: loginReducerPage
+    loginPage: loginReducerPage,
+    
 });
     
 export default rootReducer;
