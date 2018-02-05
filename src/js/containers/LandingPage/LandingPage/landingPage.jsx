@@ -40,13 +40,18 @@ export default class landingPage extends React.Component {
     <div className="andrew-body">
         <div className="landingPage">
             <div className="pimg1">
-                <nav className="navbar navbar-toggleable-md navbar-light bg-faded ">
-                <a className="navbar-brand" href="#">OnTrack Entrees <i className="fa fa-train" aria-hidden="true"></i></a>
-                <div className="collapse navbar-collapse" id="navbarNavDropdown">
-                    <ul className="navbar-nav">
-                    <li style={{marginLeft: 900 +'px'}} className="nav-item dropdown navbar-right item">
-                        <a className="nav-link  dropdown-toggle dropdown-toggle-split item" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Sign Up or Login
+            <div id="app" class="container">
+            <nav className="navbar navbar-landingpage navbar-toggleable-md navbar-light bg-faded">
+                <button className="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span className="navbar-toggler-icon"></span>
+                </button>
+                <a className="navbar-brand navbar-brand-landingpage" href="#">OnTrack Entrees <i className="fa fa-train" aria-hidden="true"></i></a>
+                <ul className="navbar-nav mr-auto">         
+                </ul>
+                <ul className="navbar-nav dropdown" >
+                <li classname="nav-item nav-item-dropdown dropdown navbar-right "  style = {{marginRight:60+"px"}}>
+                        <a className="nav-link nav-item-dropdown dropdown-toggle item"  id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Login or Signup
                         </a>
                         <div className="dropdown-menu l " aria-labelledby="navbarDropdownMenuLink navbar-spacing">
                             <form className="mx-2 ">
@@ -61,14 +66,15 @@ export default class landingPage extends React.Component {
                                 <div className="text-center">
                                 <button type="submit" className="btn btn-primary text-center">Log In</button>
                             </div>
-                            </form>
-                            <hr />
-                        <a className="dropdown-item text-center" href="/signup"> or Sign Up</a>
-                        </div>
-                    </li>
-                    </ul>
-                </div>
-                </nav>
+                        </form>
+                    <hr />
+                    <a className="dropdown-item text-center" href="/signup"> or Sign Up</a>
+                    </div>
+                </li>
+            </ul>
+            </nav>
+            </div>
+   
                 </div>
                 
 <div className="pimg1"></div>   
@@ -106,7 +112,7 @@ export default class landingPage extends React.Component {
     <h2 style={{marginLeft:40+"px"}}>About Us <i className="fa fa-id-card" aria-hidden="true"></i></h2>
     <hr />
     <div className="card">
-        <div className="about-text card-block">
+        <div className="about-text card-block p-2">
             OnTrack Entrees is transforming the way goods move around cities by enabling anyone to have anything delivered on-demand. Our revolutionary Urban Logistics platform connects customers with local couriers who can deliver anything from any store or restaurant in minutes. We empower communities to shop local with no waiting,
             and empower businesses through our API to offer delivery.
         </div>

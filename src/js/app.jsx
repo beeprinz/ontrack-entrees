@@ -1,12 +1,12 @@
 import React from 'react';
 import { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import AccountSettings from './containers/AccountSettings/SignUp/SignUp';
+import AccountSettings from './containers/AccountSettings/AccountSettings/AccountSettings';
 import Cart from './containers/Cart/OrderList/OrderList';
 import PaymentForm from './containers/Cart/PaymentForm/PaymentForm'
 import LandingPage from './containers/LandingPage/LandingPage/landingPage';
+import Login from './containers/Login';
 import SearchBar from './containers/LandingPage/SearchBar';
-
 import OrderHistory from './containers/OrderHistory/HistoryList/HistoryList';
 import RestaurantDetail from './containers/RestaurantDetail/MenuItem/MenuItem';
 import RestaurantList from './containers/RestaurantSearch/RestaurantList';
@@ -21,16 +21,18 @@ export default class App extends React.Component {
         <Route path='/search' component={ SearchBar } />
         <Route exact path='/' component={ LandingPage } />
         <Route path='/signup' component={ SignUp } />
-        <Route path='/nearby/:listings' component={ RestaurantList } />
-        <Route path='/user/:id' component={ AccountSettings } />
-        <Route path='/user/:id/orders' component={ OrderHistory } />
+        <Route path='/nearby/' component={ RestaurantList } />
+        <Route exact path='/account' component={ AccountSettings } />
+        <Route path='/user/orders' component={ OrderHistory } />
         <Route path='/user/:id/cart' component={ Cart } />
         <Route path='/restaurant/:id' component={ RestaurantList } />
         <Route path='/thankyou' component={ ThankYou } />
+        <Route path="/login" component = { Login } />
         <Route exact path='/notfound' component={ NotFound }/> 
 
         </Switch>
     </Router>
+   
     );
   }
 }

@@ -32,9 +32,9 @@
       "type": "string"
     },
     "owner": {
-      "type": "boolean",
-      "required": true,
-      "default": false
+      "type": "string",
+      "required": true
+
     }
   },
   "validations": [],
