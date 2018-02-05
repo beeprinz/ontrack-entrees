@@ -34,7 +34,43 @@ export default class OrderList extends React.Component {
         return (
 
             <div>
-                <nav className="navbar navbar-expand-lg navbar-light bg-success">
+
+<nav className="navbar navbar-toggleable-md navbar-light bg-faded navbar-account">
+<button className="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+<span className="navbar-toggler-icon"></span>
+</button>
+<a className="navbar-brand navbar-brand-account" href="/">OnTrack Entrees <i className="fa fa-train" aria-hidden="true"></i></a>
+<ul className="navbar-nav mr-auto">
+
+<li className="nav-item ">
+<form className="form-inline">
+<input className="form-control mr-sm-2" type="text" placeholder="Search" />
+<button className="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
+</form>
+</li>
+</ul>
+<ul className="navbar-nav  navbar-right dropdown" >
+
+<li className="nav-item" style={{ marginRight: 60 + "px"}}> 
+<a href="#" className="nav-link  ">
+<i className="fa fa-shopping-cart fa-2x text-dark" aria-hidden="true" style={{ fontSize: 20 + "px" }}>| Items</i> </a>
+ </li>
+
+<li classname="nav-item nav-item-dropdown dropdown navbar-right"  style = {{marginRight:60+"px"}}>
+<a className="nav-link nav-item-dropdown dropdown-toggle"  id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+<i className="fa fa-user"></i> Account 
+</a>
+<div className="dropdown-menu " style = {{marginRight: 30 +"px"}} aria-labelledby="navbarDropdownMenuLink">
+    <a className="dropdown-item" href="#">Action</a>
+    <a className="dropdown-item" href="#">Another action</a>
+    <a className="dropdown-item" href="#">Something else here</a>
+</div>
+</li>
+</ul>
+</nav>
+
+
+                {/* <nav className="navbar navbar-expand-lg navbar-light bg-success">
                     <a className="navbar-brand nav-item active" href="#" style={{ fontFamily: 'Arvo' + 'serif', fontSize: 30 + "px" }}>OnTrack Entrees
             <i className="fa fa-train" aria-hidden="true"></i>
                         <span className="sr-only">(current)</span>
@@ -48,8 +84,8 @@ export default class OrderList extends React.Component {
                         <span className="navbar-toggler-icon"></span>
                     </button>
                     <div className="collapse navbar-collapse text-right" id="navbarSupportedContent">
-                        <ul className="navbar-nav mr-auto">
-                            <li className="nav-item" style={{ marginLeft: 925 + "px", paddingTop: 10 + "px" }}>
+                        <ul className="navbar-nav ">
+                            <li className="nav-item" style={{ marginLeft: 525 + "px", paddingTop: 10 + "px" }}>
                                 <a href="#">
                                     <i className="fa fa-shopping-cart fa-2x text-dark" aria-hidden="true" style={{ fontSize: 25 + "px" }}>| Items</i>
                                 </a>
@@ -59,7 +95,7 @@ export default class OrderList extends React.Component {
                                     aria-expanded="false">
                                     <i className="fa fa-user-circle-o fa-2x text-dark" style={{ fontSize: 25 + "px" }} aria-hidden="true"> Account</i>
                                 </a>
-                                <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                     <a className="dropdown-item" href="#">Account Setting</a>
                                     <a className="dropdown-item" href="#">Order History</a>
                                     <div className="dropdown-divider"></div>
@@ -68,7 +104,9 @@ export default class OrderList extends React.Component {
                             </li>
                         </ul>
                     </div>
-                </nav>
+                </nav> */}
+
+     
 
                 <div className="container">
                     <h1 style={{ marginTop: 50 + "px" }}>Order</h1>
