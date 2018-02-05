@@ -84,32 +84,65 @@ export default class landingPage extends React.Component {
         const { email , password, userToken } = this.props;
 
         return (
-        <div className="andrew-body">
-            <div className="landingPage">
-                <div className="pimg1">
-                    <nav className="navbar navbar-toggleable-md navbar-light bg-faded ">
-                    <a className="navbar-brand" href="#">OnTrack Entrees <i className="fa fa-train" aria-hidden="true"></i></a>
-                        <div className="collapse navbar-collapse" id="navbarNavDropdown">
-                            <ul className="navbar-nav">
-                            <li  className="nav-item dropdown navbar-right item">
-                                <a className="nav-link  dropdown-toggle dropdown-toggle-split item" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Sign Up or Login
-                                </a>
-                                <div className="dropdown-menu l " aria-labelledby="navbarDropdownMenuLink navbar-spacing">
-                                    <form className="mx-2 ">
-                                        <div className="form-group text-center ">
-                                            <label htmlFor="exampleInputEmail1">Email address</label>
-                                            <input onChange={this.handleChange} defaultValue={email} name="email" type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" />
-                                        </div>
-                                        <div className="form-group text-center">
-                                            <label htmlFor="exampleInputPassword1">Password</label>
-                                            <input onChange={this.handleChange} defaultValue={password} name="password" type="password" className="form-control" id="exampleInputPassword1" placeholder="Password" />
-                                        </div>
-                                        <div className="text-center">
-                                            <button type="submit" className="btn btn-primary text-center"  onClick={this.handleLogInput} >Log In</button>                                            
-                                        </div>
-                                    </form>
-                                    <button className="dropdown-item text-center" href="/signup"> or Sign Up</button>
+    <div className="andrew-body">
+        <div className="landingPage">
+            <div className="pimg1">
+            <nav className="navbar navbar-expand-lg navbar-light bg-light navbar-landingpage">
+            <a className="navbar-brand navbar-brand-landingpage" href="#">OnTrack Entrees <i className="fa fa-train" aria-hidden="true"></i></a>
+            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span className="navbar-toggler-icon"></span>
+            </button>
+            <div className="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul className="navbar-nav mr-auto">
+            
+                </ul>
+                <ul className="navbar-nav dropdown" >
+                <li classname="nav-item nav-item-dropdown dropdown navbar-right "  style = {{marginRight:60+"px"}}>
+                        <a className="nav-link nav-item-dropdown dropdown-toggle item"  id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Login or Signup
+                        </a>
+                        <div className="dropdown-menu l " aria-labelledby="navbarDropdownMenuLink navbar-spacing">
+                            <form className="mx-2 ">
+                                <div className="form-group text-center ">
+                                <label htmlFor="exampleInputEmail1">Email address</label>
+                                <input type="email" onChange={this.handleChange} defaultValue={email} className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" />
+                                </div>
+                                <div className="form-group text-center">
+                                <label htmlFor="exampleInputPassword1">Password</label>
+                                <input onChange={this.handleChange} defaultValue={password} type="password" className="form-control" id="exampleInputPassword1" placeholder="Password" />
+                                </div>
+                                <div className="text-center">
+                                <button type="submit"  onClick={this.handleLogInput} className="btn btn-primary text-center">Log In</button>
+                            </div>
+                        </form>
+                    <hr />
+                    <a className="dropdown-item text-center" href="/signup"> or Sign Up</a>
+                    </div>
+                </li>
+            </ul>
+            </div>
+            </nav>
+            {/* <nav className="navbar navbar-landingpage navbar-toggleable-md navbar-light bg-faded">
+                <button className="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span className="navbar-toggler-icon"></span>
+                </button>
+                <a className="navbar-brand navbar-brand-landingpage" href="#">OnTrack Entrees <i className="fa fa-train" aria-hidden="true"></i></a>
+                <ul className="navbar-nav mr-auto">         
+                </ul>
+                <ul className="navbar-nav dropdown" >
+                <li classname="nav-item nav-item-dropdown dropdown navbar-right "  style = {{marginRight:60+"px"}}>
+                        <a className="nav-link nav-item-dropdown dropdown-toggle item"  id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Login or Signup
+                        </a>
+                        <div className="dropdown-menu l " aria-labelledby="navbarDropdownMenuLink navbar-spacing">
+                            <form className="mx-2 ">
+                                <div className="form-group text-center ">
+                                <label htmlFor="exampleInputEmail1">Email address</label>
+                                <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" />
+                                </div>
+                                <div className="form-group text-center">
+                                <label htmlFor="exampleInputPassword1">Password</label>
+                                <input type="password" className="form-control" id="exampleInputPassword1" placeholder="Password" />
                                 </div>
                             </li>
                             </ul>
