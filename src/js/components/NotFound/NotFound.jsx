@@ -8,7 +8,7 @@ const NotFound = () => {
    <div className= 'p-3 mb-5 bg-success text-white notfounderror'>   
     <div className ='container'>
       <h1 className="display-1">404</h1>
-      <h1 className="display-5">Whoops! Something went wrong.</h1>
+      <h1 className="display-5">Whoopsss! Something went wrong.</h1>
       <p>
         This page is not available. Click back to return home. 
       </p>
