@@ -10,13 +10,14 @@ export default class SearchBar extends React.Component{
         this.handleSearchClick = this.handleSearchClick.bind(this);
         this.handleSearchInput = this.handleSearchInput.bind(this);
         this.handleOnPredictClick = this.handleOnPredictClick.bind(this);
-        this.handleAPI = debounce(this.getGoogleResults.bind(this), 10);
+        this.handleAPI = debounce(this.getGoogleResults.bind(this), 100);
     }
 
+
     handleSearchClick(event){
-        console.log(event.target.value)
         const {dispatch} = this.props
-        const value = event.target.value;
+        const value = this.props.search
+        // console.log(value)
         dispatch(getSearch(value))
     }
 
@@ -28,7 +29,6 @@ export default class SearchBar extends React.Component{
     handleSearchInput(event){
         const {dispatch} = this.props
         const value = event.target.value
-        console.log('handleSearch');
         this.handleAPI(value);
         dispatch(updateSearch(value));
     }
@@ -41,9 +41,9 @@ export default class SearchBar extends React.Component{
 
     render() {
         const store = this.props
-        console.log('store', store)
+        // console.log('store', store)  
         return (
-            <div>
+            <div className="container">
                 <div className="jumbotron">
                     <h1 className="display-4">OnTrack Entree's</h1>
                     <p className="lead">Because who want's to be hangry</p>
@@ -51,7 +51,7 @@ export default class SearchBar extends React.Component{
                 </div>
                 <div className="input-group input-group-lg">
                     <div className="input-group-prepend">
-                        <button value={store.search} onClick={this.handleSearchClick} className="btn btn-outline-secondary" type="button">Search</button>
+                        <Link value={store.search} onClick={this.handleSearchClick} className="btn btn-outline-secondary" type="button" to={`/nearby/${store.search}`}>Search</Link>
                     </div>
                     <input value={store.search} onChange={this.handleSearchInput} type="text" className="form-control" placeholder="City" aria-label="Large" aria-describedby="basic-addon1" />
                 </div>

@@ -13,8 +13,9 @@ import restaurantlistReducer from './containers/RestaurantSearch/RestaurantList/
 const rootReducer = combineReducers({
     //ADD REDUCERS HERE:
     signup: signUpReducer,
-    searchbarReducer: searchbarReducer,
-    email:loginReducer
+    searchbar: searchbarReducer,
+    email:loginReducer,
+    nearbylist:restaurantlistReducer
 });
     
 export default rootReducer;
