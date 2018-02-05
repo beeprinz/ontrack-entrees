@@ -56,7 +56,7 @@ export default class HistoryList extends React.Component {
   <h5 className='py-2'>Total: $9.50</h5>
   <a href="#" className="list-group-item list-group-item-action">1/18/18<br/>Urbn Pizza<br /><br />1 Large Pepperoni Pizza<br />1 breadsticks</a>
   <h5 className='py-2'>Total: $16.35</h5>
-  <a href="#" className="list-group-item list-group-item-action">12/21/18<br/>Sushi Ninja<br />1 Rainbow Roll<br/>1 Tiger Roll</a>
+  <a href="#" className="list-group-item list-group-item-action">12/21/18<br/>Sushi Ninja<br /><br />1 Rainbow Roll<br/>1 Tiger Roll</a>
   <h5 className='py-2'>Total: $22.80</h5>
 
 </div>
