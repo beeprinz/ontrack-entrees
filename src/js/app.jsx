@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import AccountSettings from './containers/AccountSettings/AccountSettings/AccountSettings';
 import Cart from './containers/Cart/OrderList/OrderList';
 import PaymentForm from './containers/Cart/PaymentForm/PaymentForm';
-import LandingPage from './containers/LandingPage/LandingPage/landingPage';
+import LandingPage from './containers/LandingPage/LandingPage';
 import Login from './containers/Login';
 import SearchBar from './containers/LandingPage/SearchBar';
 import OrderHistory from './containers/OrderHistory/HistoryList/HistoryList';

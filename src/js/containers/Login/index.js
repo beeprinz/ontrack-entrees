@@ -4,8 +4,9 @@ import Login from './Login';
 
 function mapStoreToProps(store){
     return{
-        userId: store.userId,
-        accessToken: store.accessToken
+        // userId: store.userId,
+        // accessToken: store.accessToken
+        information:store.information
     };
 }
 

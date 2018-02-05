@@ -2,7 +2,6 @@ import axios from 'axios';
 
 export const getLogInput = (email, password) => { 
    
-
     var loginData = {
         email: email,
         password: password
@@ -13,8 +12,6 @@ export const getLogInput = (email, password) => {
       type: 'LOGIN',
       payload: axios.post('http://localhost:5000/api/users/login', loginData)
                 .then(response => {
-                    //we'll want to return token
-                    // response.data.id
                    return response; 
                 }).catch(error => {
                     alert(error)
@@ -26,6 +23,7 @@ export const getLogInput = (email, password) => {
 
   
   export const updateLogInput = (update) => { 
+    console.log(update + " = log Input ")
     return {
       type: 'LOG_INPUT',
       payload: update
