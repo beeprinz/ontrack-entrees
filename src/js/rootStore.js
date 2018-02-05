@@ -2,7 +2,7 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import rootReducer from './rootReducer';
 import { combineReducers } from 'redux';
 import promiseMiddleware from 'redux-promise-middleware';
-import thunk from 'thunk';
+import thunk from 'redux-thunk';
 
 function tempReducer () {
   return null;
