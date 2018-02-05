@@ -3,7 +3,7 @@ import { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import AccountSettings from './containers/AccountSettings/AccountSettings/AccountSettings';
 import Cart from './containers/Cart/OrderList/OrderList';
-import PaymentForm from './containers/Cart/PaymentForm/PaymentForm'
+import PaymentForm from './containers/Cart/PaymentForm/PaymentForm';
 import LandingPage from './containers/LandingPage/LandingPage/landingPage';
 import Login from './containers/Login';
 import SearchBar from './containers/LandingPage/SearchBar';
