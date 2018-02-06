@@ -3,7 +3,9 @@ import {
     getLogInput, updateLogInput
 } from './landingpageActions'
 import { Redirect } from 'react-router-dom'
+import  { updateSearch, getSearch, fetchRestaurants, getGoogleSearch, selectPrediction, debounce } from '../SearchBar/searchbarActions'
 
+// import SearchBar from '../Searchbar/SearchBar'
 
 export default class landingPage extends React.Component {
     constructor(props) {
@@ -39,6 +41,31 @@ export default class landingPage extends React.Component {
         if (!!this.props.userToken) return <Redirect to="/restaurant/:id" />
         
     }
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     render() {
       
 
@@ -63,27 +90,29 @@ export default class landingPage extends React.Component {
                         Login or Signup
                         </a>
                         <div className="dropdown-menu l " aria-labelledby="navbarDropdownMenuLink navbar-spacing">
-                            <form className="mx-2 ">
-                                <div className="form-group text-center ">
-                                <label htmlFor="exampleInputEmail1">Email address</label>
-                                <input type="email" onChange={this.handleChange} defaultValue={email} className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" />
-                                </div>
-                                <div className="form-group text-center">
-                                <label htmlFor="exampleInputPassword1">Password</label>
-                                <input onChange={this.handleChange} defaultValue={password} type="password" className="form-control" id="exampleInputPassword1" placeholder="Password" />
-                                </div>
-                                <div className="text-center">
-                                <button type="submit"  onClick={this.handleLogInput} className="btn btn-primary text-center">Log In</button>
-                            </div>
-                        </form>
+                        <a className="dropdown-item text-center" href="/login"> login </a>
                     <hr />
-                    <a className="dropdown-item text-center" href="/signup"> or Sign Up</a>
+                    <a className="dropdown-item text-center" href="/signup">Sign Up</a>
                     </div>
                 </li>
             </ul>
             </div>
             </nav>
             <div className="pimg1"></div>
+            
+
+
+
+
+
+
+
+
+
+
+
+
+            
     <section className="section section-light">
         <h2 style={{marginLeft:40+"px"}} >Explore Cities <i className="fa fa-building-o" aria-hidden="true"></i></h2>
         <hr />

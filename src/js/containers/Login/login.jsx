@@ -60,20 +60,21 @@ render (){
             <div className="container">
             <form onSubmit= {this.handleUserInput} >
                 <div className="form-group text-center ">
-                <label htmlfor="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+                <label htmlFor="inputEmail3" className="col-sm-2 col-form-label">Email</label>
                 <div className="container">
                     <input type="email" onChange={this.handleOnChange} name ="email" className="form-control" id="inputEmail3" placeholder="Email" />
                 </div>
                 </div>
                 <div className="form-group text-center ">
-                <label htmlfor="inputPassword3" className="col-sm-2 col-form-label">Password</label>
+                <label htmlFor="inputPassword3" className="col-sm-2 col-form-label">Password</label>
                 <div className="container">
                     <input type="password"  onChange={this.handleOnChange} name="password" className="form-control" id="inputPassword3" placeholder="Password" />
                 </div>
                 </div>
                 <div className="form-group">
                 <div className="container text-center">
-                    <button type="submit" className="btn btn-primary">Sign in</button>
+                   
+                    <Link to={`/`} type="submit" className="btn btn-primary">Sign Up</Link>
                 </div>
                 </div>
             </form>

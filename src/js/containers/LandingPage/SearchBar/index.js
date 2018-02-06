@@ -2,10 +2,10 @@ import { connect } from 'react-redux';
 import SearchBar from './SearchBar';
 
 function mapStoreToProps(store) {
-    // console.log(store.searchbarReducer.searchBarInput,'store')
+    console.log(store,'store')
     return {
-        search: store.searchBarInput,
-        googleResults: store.googleResults
+        search: store.searchbarReducer.searchBarInput,
+        googleResults: store.searchbarReducer.googleResults
     }
 }
 

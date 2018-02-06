@@ -18,17 +18,17 @@ const defaultState = {
                 eta:'5 min'
             },{
                 name:'Wendy\'s',
-                img:'https://www.thedailymeal.com/sites/default/files/styles/hero_image_breakpoints_theme_tdmr_lg_1x/public/story/2016/wendysdouble.JPG?itok=AvYl92-A&timestamp=1474479126',
+                img:'http://www.thedailymeal.com/sites/default/files/styles/hero_image_breakpoints_theme_tdmr_lg_1x/public/story/2016/wendysdouble.JPG?itok=AvYl92-A&timestamp=1474479126',
                 menu:['Dove Single','Dave Double','Bacon Cheesburger','Baconator','Double Stack'],
                 eta:'45 min'
             },{
                 name:'Pizza Hut',
-                img:'https://www.thedailymeal.com/sites/default/files/styles/hero_image_breakpoints_theme_tdmr_lg_1x/public/story/2016/wendysdouble.JPG?itok=AvYl92-A&timestamp=1474479126',
+                img:'http://www.thedailymeal.com/sites/default/files/styles/hero_image_breakpoints_theme_tdmr_lg_1x/public/story/2016/wendysdouble.JPG?itok=AvYl92-A&timestamp=1474479126',
                 menu:['Chees Pizza','Garlic Breadsticks','BBQ Wings','Pepsi','Cookie'],
                 eta:'10 min'
             },{
                 name:'Di\'Leones',
-                img:'https://static.wixstatic.com/media/c3c5f8_2b7085f1e71d47da9288ff64b2c61aaf~mv2_d_5616_3744_s_4_2.jpg/v1/fill/w_1025,h_498,al_c,q_85,usm_0.66_1.00_0.01/c3c5f8_2b7085f1e71d47da9288ff64b2c61aaf~mv2_d_5616_3744_s_4_2.webp',
+                img:'http://static.wixstatic.com/media/c3c5f8_2b7085f1e71d47da9288ff64b2c61aaf~mv2_d_5616_3744_s_4_2.jpg/v1/fill/w_1025,h_498,al_c,q_85,usm_0.66_1.00_0.01/c3c5f8_2b7085f1e71d47da9288ff64b2c61aaf~mv2_d_5616_3744_s_4_2.webp',
                 menu:['Lasanga','Raviolies','Anti Pasta Salad','Calzones','Pasta'],
                 eta:'23 min'
             },{

@@ -18,13 +18,13 @@ export default class App extends React.Component {
     return (
       <Router>
         <Switch>
-        <Route path='/search' component={ SearchBar } />
-        <Route exact path='/' component={ LandingPage } />
+        <Route exact path='/' component={ SearchBar } />
+        {/* <Route exact path='/' component={ LandingPage } /> */}
         <Route path='/signup' component={ SignUp } />
         <Route path='/nearby/' component={ RestaurantList } />
         <Route exact path='/account' component={ AccountSettings } />
         <Route path='/user/orders' component={ OrderHistory } />
-        <Route path='/user/:id/cart' component={ Cart } />
+        <Route path='/cart' component={ Cart } />
         <Route path='/restaurant/:id' component={ RestaurantList } />
         <Route path='/thankyou' component={ ThankYou } />
         <Route path="/login" component = { Login } />

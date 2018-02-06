@@ -6,15 +6,17 @@ import  { test } from './restaurantlistActions'
 export default class SearchBar extends React.Component{
     constructor(props){
         super(props);
+
+        this.handleSelection = this.handleSelection.bind(this)
     }
 
 
-    // handleSearchClick(event){
-    //     const {dispatch} = this.props
-    //     const value = this.props.search
-    //     // console.log(value)
-    //     dispatch(getSearch(value))
-    // }
+    handleSelection(event){
+        const {dispatch} = this.props
+        const value = event.target.value
+        console.log(value)
+        // dispatch(getSearch(value))
+    }
 
 
     render() {
@@ -50,6 +52,7 @@ export default class SearchBar extends React.Component{
                         SanDiego.map((info,index,array) => {
                             // console.log(index)
                             if(index < 3){
+                                console.log(info)
                                 const item = array[index].menu;
                                 return <div key={`1${index}`} className="mt-4 card">
                                     <img className="card-img-top img-thumbnail" style={{maxHeight:'250px'}} src={info.img} alt="Food Image" />
@@ -61,7 +64,7 @@ export default class SearchBar extends React.Component{
                                             return <p key={index} className="card-text">{item}</p>
                                         })
                                     }
-                                    <a href="#" className="btn btn-primary">Order Now</a>
+                                    <Link to={`/cart`} onClick={this.handleSelection} value={info.menu} className="btn btn-primary">Order Now</Link>
                                     </div>
                                     <div className="card-footer">
                                     <small className="text-muted">{info.eta}</small>
@@ -86,7 +89,7 @@ export default class SearchBar extends React.Component{
                                             return <p key={`${index}`} className="card-text">{item}</p>
                                         })
                                     }
-                                    <a href="#" className="btn btn-primary">Order Now</a>
+                                    <Link to={`/cart`} className="btn btn-primary">Order Now</Link>
                                     </div>
                                     <div className="card-footer">
                                     <small className="text-muted">{info.eta}</small>

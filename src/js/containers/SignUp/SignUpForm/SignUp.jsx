@@ -178,7 +178,7 @@ render (){
             </div>
             </div>
             <button type="submit"  className="btn btn-primary text-center m-3">Submit</button>
-              {userSaved ?   <Redirect to="/resturantDetail"/> :''}      
+              {userSaved ?   <Redirect to="/"/> :''}      
             </form>
         </div>
     </div>   
