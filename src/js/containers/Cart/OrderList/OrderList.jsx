@@ -1,5 +1,5 @@
 import React from 'react';
-
+import {Link} from 'react-router-dom'
 
 export default class OrderList extends React.Component {
     constructor(props) {
@@ -70,44 +70,6 @@ export default class OrderList extends React.Component {
 </nav>
 
 
-                {/* <nav className="navbar navbar-expand-lg navbar-light bg-success">
-                    <a className="navbar-brand nav-item active" href="#" style={{ fontFamily: 'Arvo' + 'serif', fontSize: 30 + "px" }}>OnTrack Entrees
-            <i className="fa fa-train" aria-hidden="true"></i>
-                        <span className="sr-only">(current)</span>
-                    </a>
-                    <form className="form-inline my-2 my-lg-0" style={{ marginLeft: 50 + "px" }}>
-                        <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
-                        <button className="btn btn-dark my-2 my-sm-0 " type="submit">Search</button>
-                    </form>
-                    <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                        <span className="navbar-toggler-icon"></span>
-                    </button>
-                    <div className="collapse navbar-collapse text-right" id="navbarSupportedContent">
-                        <ul className="navbar-nav ">
-                            <li className="nav-item" style={{ marginLeft: 525 + "px", paddingTop: 10 + "px" }}>
-                                <a href="#">
-                                    <i className="fa fa-shopping-cart fa-2x text-dark" aria-hidden="true" style={{ fontSize: 25 + "px" }}>| Items</i>
-                                </a>
-                            </li>
-                            <li className="nav-item dropdown" style={{ marginLeft: 25 + "px" }}>
-                                <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-                                    aria-expanded="false">
-                                    <i className="fa fa-user-circle-o fa-2x text-dark" style={{ fontSize: 25 + "px" }} aria-hidden="true"> Account</i>
-                                </a>
-                                <div className="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                    <a className="dropdown-item" href="#">Account Setting</a>
-                                    <a className="dropdown-item" href="#">Order History</a>
-                                    <div className="dropdown-divider"></div>
-                                    <a className="dropdown-item" href="#">Log Out</a>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </nav> */}
-
-     
-
                 <div className="container">
                     <h1 style={{ marginTop: 50 + "px" }}>Order</h1>
 
@@ -124,9 +86,9 @@ export default class OrderList extends React.Component {
                                         <tr>
                                             <td><h4>
                                                 <a href="#"><i className="fa fa-times fa-2x text-dark" aria-hidden="true" style={{ fontSize: 25 + "px" }} onClick={this.handleDelete}>
-                                                </i></a>   1. Carne Asada Fries </h4></td>
+                                                </i></a>   1. House-made Sausage</h4></td>
                                             <td></td>
-                                            <td><h4>$8.75</h4></td>
+                                            <td><h4>$4.75</h4></td>
                                             <td></td>
                                             <td ><h4><a href="#"><i className="fa fa-minus fa-lg text-dark" aria-hidden="true" style={{ fontSize: 20 + "px" }} onClick={this.handleMinusClick}>
                                             </i></a> 1 <a href="#"><i className="fa fa-plus fa-lg text-dark" aria-hidden="true" style={{ fontSize: 20 + "px" }} onClick={this.handleAddClick}>
@@ -134,9 +96,9 @@ export default class OrderList extends React.Component {
                                         </tr>
                                         <tr>
                                             <td><h4><a href="#"><i className="fa fa-times fa-2x text-dark" aria-hidden="true" style={{ fontSize: 25 + "px" }} onClick={this.handleDelete} >
-                                            </i></a>  2. Pollo Asada Burrito</h4></td>
+                                            </i></a>  2. Meatballs</h4></td>
                                             <td></td>
-                                            <td><h4>$8.75</h4></td>
+                                            <td><h4>$6.75</h4></td>
                                             <td></td>
                                             <td ><h4><a href="#"><i className="fa fa-minus fa-lg text-dark" aria-hidden="true" style={{ fontSize: 20 + "px" }} onClick={this.handleMinusClick}>
                                             </i></a> 1 <a href="#"><i className="fa fa-plus fa-lg text-dark" aria-hidden="true" style={{ fontSize: 20 + "px" }} onClick={this.handleAddClick}>
@@ -145,9 +107,9 @@ export default class OrderList extends React.Component {
 
                                         <tr>
                                             <td><h4><a href="#"><i className="fa fa-times fa-2x text-dark" aria-hidden="true" style={{ fontSize: 25 + "px" }} onClick={this.handleDelete}>
-                                            </i></a> 3. Carne Asada Tacos</h4></td>
+                                            </i></a> 3. Season Pickles</h4></td>
                                             <td></td>
-                                            <td><h4>$8.75</h4></td>
+                                            <td><h4>$7.75</h4></td>
                                             <td></td>
                                             <td ><h4><a href="#"><i className="fa fa-minus fa-lg text-dark" aria-hidden="true" style={{ fontSize: 20 + "px" }} onClick={this.handleMinusClick}>
                                             </i></a> 1 <a href="#"><i className="fa fa-plus fa-lg text-dark" aria-hidden="true" style={{ fontSize: 20 + "px" }} onClick={this.handleAddClick}>
@@ -156,7 +118,7 @@ export default class OrderList extends React.Component {
 
                                         <tr>
                                             <td><h4> <a href="#"><i className="fa fa-times fa-2x text-dark" aria-hidden="true" style={{ fontSize: 25 + "px" }} onClick={this.handleDelete} >
-                                            </i></a> 4. Chimichanga</h4></td>
+                                            </i></a> 4. Salad Lyonnaise</h4></td>
                                             <td></td>
                                             <td><h4>$8.75</h4></td>
                                             <td></td>
@@ -167,9 +129,9 @@ export default class OrderList extends React.Component {
 
                                         <tr>
                                             <td><h4> <a href="#"><i className="fa fa-times fa-2x text-dark" aria-hidden="true" style={{ fontSize: 25 + "px" }} onClick={this.handleDelete}>
-                                            </i></a> 5. Fish Burrito</h4></td>
+                                            </i></a> 5. 16oz beer</h4></td>
                                             <td></td>
-                                            <td><h4>$8.75</h4></td>
+                                            <td><h4>$10.75</h4></td>
                                             <td></td>
                                             <td ><h4><a href="#"><i className="fa fa-minus fa-lg text-dark" aria-hidden="true" style={{ fontSize: 20 + "px" }} onClick={this.handleMinusClick}>
                                             </i></a> 1 <a href="#"><i className="fa fa-plus fa-lg text-dark" aria-hidden="true" style={{ fontSize: 20 + "px" }} onClick={this.handleAddClick}>
@@ -179,7 +141,7 @@ export default class OrderList extends React.Component {
                                     </tbody>
                                 </table>
                                 <div className="card-header  border border-success   " style={{ paddingLeft: 800 + "px" }}>
-                                    <h3>Total $69.57</h3>
+                                    <h3>Total $39.57</h3>
                                 </div>
                             </div>
                         </div>
@@ -216,7 +178,7 @@ export default class OrderList extends React.Component {
                                             </div>
                                         </div>
                                         <div className="col-md-4 mb-3">
-                                            <label htmlfor="validationCustom02">Card #</label>
+                                            <label htmlFor="validationCustom02">Card #</label>
                                             <input type="password" className="form-control" id="validationCustom02" placeholder="Card number" required />
                                             <div className="valid-feedback">
                                                 Looks good!
@@ -224,7 +186,7 @@ export default class OrderList extends React.Component {
                                         </div>
 
                                         <div className="col-md-1 mb-3">
-                                            <label htmlfor="validationCustom03">CVC </label>
+                                            <label htmlFor="validationCustom03">CVC </label>
                                             <input type="password" className="form-control" id="validationCustom03" placeholder="cvc #" required />
                                             <div className="valid-feedback">
                                                 Looks good!
@@ -238,7 +200,7 @@ export default class OrderList extends React.Component {
 
                                     <div className="form-row">
                                         <div className="col-md-12 mb-3">
-                                            <label htmlfor="validationServer07">Address</label>
+                                            <label htmlFor="validationServer07">Address</label>
                                             <input type="text" className="form-control " id="validationServer07" placeholder="Address" required />
                                             <div className="invalid-feedback">
                                                 Please provide a valid address.
@@ -248,21 +210,21 @@ export default class OrderList extends React.Component {
 
                                     <div className="form-row">
                                         <div className="col-md-6 mb-3">
-                                            <label htmlfor="validationServer08">City</label>
+                                            <label htmlFor="validationServer08">City</label>
                                             <input type="text" className="form-control" id="validationServer08" placeholder="City" required />
                                             <div className="invalid-feedback">
                                                 Please provide a valid city.
                                                   </div>
                                         </div>
                                         <div className="col-md-3 mb-3">
-                                            <label htmlfor="validationServer09">State</label>
+                                            <label htmlFor="validationServer09">State</label>
                                             <input type="text" className="form-control" id="validationServer09" placeholder="State" required />
                                             <div className="invalid-feedback">
                                                 Please provide a valid state.
                                                   </div>
                                         </div>
                                         <div className="col-md-3 mb-3">
-                                            <label htmlfor="validationServer10">Zip</label>
+                                            <label htmlFor="validationServer10">Zip</label>
                                             <input type="text" className="form-control" id="validationServer10" placeholder="Zip" required />
                                             <div className="invalid-feedback">
                                                 Please provide a valid zip.
@@ -273,7 +235,7 @@ export default class OrderList extends React.Component {
                                     <div className="form-group">
                                         <div className="form-check">
                                             <input className="form-check-input" type="checkbox" value="" id="invalidCheck" required />
-                                            <label className="form-check-label" htmlfor="invalidCheck">
+                                            <label className="form-check-label" htmlFor="invalidCheck">
                                                 Agree to terms and conditions
                                             </label>
                                             <div className="invalid-feedback">
@@ -281,7 +243,7 @@ export default class OrderList extends React.Component {
                                             </div>
                                         </div>
                                     </div>
-                                    <button className="btn btn-success" type="submit"  > Buy Now</button>
+                                    <Link to={`/thankyou`} className="btn btn-lg btn-primary">Buy Now</Link>
                                 </form>
 
                             </div>

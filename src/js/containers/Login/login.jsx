@@ -23,17 +23,18 @@ export default class LogIn extends React.Component {
             "password": this.state.password
         }
         console.log(userLoginInfo)
-        if (userLoginInfo.email =! ''){
-            dispatch(LogUserIn(userLoginInfo))
-            axios.post('http://localhost:3000/api/users/login',{
+        if (true){
+           console.log(userLoginInfo.email,userLoginInfo.password)
+            axios.post('http://localhost:5000/api/users/login',{
                 "email": userLoginInfo.email,
                 "password": userLoginInfo.password
             }).then(function (response) {
-                this.setState({email:'',password:''})
-                console.log (" THIS IS RESPONSE DATA  + " + response)
+               
+                console.log (" THIS IS RESPONSE DATA  + ", response)
                 dispatch(logUserIn(response))          
               })
               .catch(function (error) {
+                  console.log("error + ", error)
                 dispatch(userError(userLoginInfo))
                  })
             
@@ -59,20 +60,21 @@ render (){
             <div className="container">
             <form onSubmit= {this.handleUserInput} >
                 <div className="form-group text-center ">
-                <label htmlfor="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+                <label htmlFor="inputEmail3" className="col-sm-2 col-form-label">Email</label>
                 <div className="container">
                     <input type="email" onChange={this.handleOnChange} name ="email" className="form-control" id="inputEmail3" placeholder="Email" />
                 </div>
                 </div>
                 <div className="form-group text-center ">
-                <label htmlfor="inputPassword3" className="col-sm-2 col-form-label">Password</label>
-                <div class="container">
+                <label htmlFor="inputPassword3" className="col-sm-2 col-form-label">Password</label>
+                <div className="container">
                     <input type="password"  onChange={this.handleOnChange} name="password" className="form-control" id="inputPassword3" placeholder="Password" />
                 </div>
                 </div>
                 <div className="form-group">
                 <div className="container text-center">
-                    <button type="submit" className="btn btn-primary">Sign in</button>
+                   
+                    <Link to={`/`} type="submit" className="btn btn-primary">Sign Up</Link>
                 </div>
                 </div>
             </form>

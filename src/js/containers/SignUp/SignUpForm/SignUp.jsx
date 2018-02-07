@@ -47,7 +47,7 @@ handleChange(event) {
   
     
     if(userInfo.password === userInfo.password2 && userInfo.owner != undefined){   
-            axios.post('http://localhost:3000/api/users',{
+            axios.post('http://localhost:5000/api/users',{
                first_name: userInfo.firstName,
                last_name: userInfo.lastName,
                email: userInfo.email,
@@ -178,7 +178,7 @@ render (){
             </div>
             </div>
             <button type="submit"  className="btn btn-primary text-center m-3">Submit</button>
-              {userSaved ?   <Redirect to="/resturantDetail"/> :''}      
+              {userSaved ?   <Redirect to="/"/> :''}      
             </form>
         </div>
     </div>   

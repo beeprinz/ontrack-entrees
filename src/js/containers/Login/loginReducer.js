@@ -1,9 +1,10 @@
 import { types } from './loginActions';
 
 const initialState = {
-    Id: '',
-    accessToken: '',
-    LogIn: false
+    // Id: '',
+    // accessToken: '',
+    LogIn: false,
+    information:'',
 };
 
 export default function loginReducer(state = initialState, action) {
@@ -14,8 +15,9 @@ export default function loginReducer(state = initialState, action) {
         case types.LOG_USER_IN_FULLFILLED: {
             return {
                 ...state,
-                Id: payload.userId,
-                accessToken: payload.accessToken,
+                // Id: payload.userId,
+                // accessToken: payload.accessToken,
+                information:payload,
                 LogIn: true
             };
         }
